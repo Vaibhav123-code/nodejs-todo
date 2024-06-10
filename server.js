@@ -48,7 +48,9 @@ mongoose.connect(process.env.MONGO_URI)
 
 ///api
 app.get("/",(req,res) => {
+
    console.log("server is running")
+   res.send("ok")
 })
 
 app.get("/register", (req, res)=> {
