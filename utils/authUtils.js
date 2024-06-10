@@ -48,7 +48,7 @@ const sendverificationmail = ({email, verifyToken})  => {
     from: "vaibhavagnihotri2001@gmail.com",
     to: email,
     subject: "email verification for ToDO App",
-    html: `click <a href="http://localhost:8001/verifytoken/${verifyToken}">Here </a> `
+    html: `click <a href="https://nodejs-todo-2.onrender.com/verifytoken/${verifyToken}">Here </a> `
   }
 
   transporter.sendMail(mailOptions, (error, info) => {
