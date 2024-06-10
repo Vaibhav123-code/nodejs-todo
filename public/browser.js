@@ -6,7 +6,7 @@ document.addEventListener("click", function (event) {
         const newData = prompt("enter new todo text");
         console.log(id , newData);
 
-        axios.post("/edit-todo", {id, newData})
+        axios.post("https://nodejs-todo-2.onrender.com/edit-todo", {id, newData})
              .then((res) => {
                  if( res.data.status !== 200) {
                     alert(res.data.message);
@@ -24,7 +24,7 @@ document.addEventListener("click", function (event) {
      else if (event.target.classList.contains("delete-me")) {
          const id = event.target.getAttribute("data-id");
 
-         axios.post("/delete-item",{id})
+         axios.post("https://nodejs-todo-2.onrender.com/delete-item",{id})
          .then((res)=> {
             console.log(res);
             if (res.data.status !== 200){
@@ -42,7 +42,7 @@ document.addEventListener("click", function (event) {
         //   event.preventDefault();
           const todoText = document.getElementById('create-field').value;
           
-          axios.post("/create-item", { todo : todoText})
+          axios.post("https://nodejs-todo-2.onrender.com/create-item", { todo : todoText})
           .then((res)=> {
              if( res.data.status !== 201) {
                 alert(res.data.message);
@@ -77,7 +77,7 @@ window.onload = generateTodos();
  console.log(skip);
 function generateTodos() {
 
-    axios.get(`/pagination?skip=${skip}`)
+    axios.get(`https://nodejs-todo-2.onrender.com/pagination?skip=${skip}`)
     .then((res) => {
         console.log(res);
         if(res.data.status !== 200) {
