@@ -11,7 +11,7 @@
 <div class="container">
     <h1 class="display-4 text-center py-1">ToDo App</h1>
   <div class="jumbotron p-3 shadow-sm">
-   
+     <h4 id="username" class="display-6 "></h4>
       <div class="d-flex align-items-center">
         <input id="create-field" type="text"  placeholder="Enter your todo" name="todo"
          class="form-control mr-3" autofocus autocomplete="off"  style="width: 20%"
@@ -23,12 +23,12 @@
  <ul id="item_list" class="list-group pb-5">
   
  </ul>
- <button class="btn">Show more</button>
+ <button class="btn show_more">Show more</button>
  <br/> <br/>
 
-    <form action="/logout" method="POST">
-        <button class="btn btn-dark mb-2">Logout</button>
-    </form>
+ <form action="/logout" method="POST">
+  <button class="btn btn-dark mb-2">Logout</button>
+</form>
    
     <form action="/logout_from_all" method="POST">
       <button class="btn btn-danger">Logout from all devices</button>

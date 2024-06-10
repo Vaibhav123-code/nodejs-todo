@@ -6,7 +6,7 @@ document.addEventListener("click", function (event) {
         const newData = prompt("enter new todo text");
         console.log(id , newData);
 
-        axios.post("https://nodejs-todo-2.onrender.com/edit-todo", {id, newData})
+        axios.post("/edit-todo", {id, newData})
              .then((res) => {
                  if( res.data.status !== 200) {
                     alert(res.data.message);
@@ -86,6 +86,7 @@ function generateTodos() {
         const todos = res.data.data;
         skip += todos.length;
         console.log(skip);
+        document.getElementById("username").innerText = `Username - ${todos[0].username}`
         document.getElementById("item_list").insertAdjacentHTML(
             "beforeend",
             todos.map((item) => {
