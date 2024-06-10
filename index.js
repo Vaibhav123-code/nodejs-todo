@@ -50,7 +50,7 @@ mongoose.connect(process.env.MONGO_URI)
 app.get("/",(req,res) => {
 
    console.log("server is running")
-   res.send("ok")
+   res.send("ok get it")
 })
 
 app.get("/register", (req, res)=> {
