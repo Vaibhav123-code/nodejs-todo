@@ -109,10 +109,10 @@ app.post("/register", async (req, res)=> {
          // send email
          sendverificationmail({email, verifyToken})
         
-         return res.send({
-            status:200,
-            message:"link has been sent to your mail, please verify your email"
-         });
+         res.render('verification', {
+            status: 200,
+            message: "Link has been sent to your email, please verify your email."
+        });
     } catch (error) {
         return res.send({
             status: 500,
